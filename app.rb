@@ -1,3 +1,4 @@
+# filepath: c:\Users\franz.lofstrand\wsp\wsp1-todolistan\app.rb
 require 'debug'
 require "awesome_print"
 
@@ -13,8 +14,14 @@ class App < Sinatra::Base
       return @db
     end
 
-    get '/' do        
-        erb(:'todos/index')
+    get '/' do
+      @todos = db.execute("SELECT * FROM todos")
+      erb :'todos/index'
     end
 
+    get '/todos/new' do
+      erb :'todos/new'
+    end
+
+    
 end

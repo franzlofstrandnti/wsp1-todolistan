@@ -1,1 +1,23 @@
-<img src="/img/glhf.png">
+<h2>Alla todos</h2>
+
+<ul>
+<% @todos.each do |todo| %>
+<li>
+        <a href="/todos/<%= todo["id"]%>">
+                <%= todo["name"] %>
+                <% if todo ["description"] %> <%= todo["description"] %> <% end %>
+        </a>
+
+
+        <form class="delete" action="/todos/<%=todo["id"]%>/delete" method="post">
+            <input type="submit" value="Ta bort">
+        </form>
+
+        <form action="/todos/<%= todo["id"] %>/edit" method="get">
+            <input type="submit" value="Ändra">
+        </form>
+
+        <a href="/categories/<%= todo["category_id"] %>"><%= todo["category_name"] %></a>
+    </li>
+<% end %>
+</ul>

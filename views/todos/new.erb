@@ -1,0 +1,17 @@
+<h2>Ny todo</h2>
+
+<form action="/todos" method="post">
+  <label>Todo
+    <input type="text" name="todo_name">
+  </label>
+
+  <label>Beskrivning
+    <input type="text" name="todo_description">
+  </label>
+
+  <label>Viktighet
+    <input type="number" name="todo_importance" min="1" max="10">
+  </label>
+
+  <input type="submit" value="Spara">
+</form>

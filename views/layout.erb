@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todolistan</title>
+    <title>Fruktparadiset</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-  <%= yield %>
+    <header>
+        <h1 class="logo">Todolistan</h1>
+    </header>
+    <hr>
+    <nav>
+        <ul>
+            <li><a href="/todos">Alla todos</a></li>
+            <li><a href="/todos/new">Ny todo</a></li>
+            <li><a href="/categories">Kategorier</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <%= yield %>
+    <hr>
+    <footer>
+        <p>Kontakta oss</p>
+    </footer>
 </body>
 </html>
